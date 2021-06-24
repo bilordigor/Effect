@@ -4,6 +4,7 @@ import { Grid, Typography } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import Navigation from '../../components/Menu/Navigation';
 import Background from '../../components/HelpComponents/Background';
+import Loading from './../../components/HelpComponents/Loading';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -82,6 +83,8 @@ export default function WhyEffect() {
         return "/wallpapers/hp" + count.toString() + ".jpg"
     }
 
+    const [isLoad, SetIsLoad] = React.useState(true)
+
     return (
         <>
             <Head>
@@ -90,7 +93,8 @@ export default function WhyEffect() {
                 </title>
             </Head>
             <div className={classes.root}>
-                <Background src={wallpapers()} />
+                <Background SetIsLoad={SetIsLoad} src={wallpapers()} />
+                {isLoad && <Loading />}
                 <Grid
                     className={classes.gridroot}
                     container

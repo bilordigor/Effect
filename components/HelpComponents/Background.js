@@ -14,9 +14,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Background = ({ src, alt = 'background' }) => {
+const Background = ({ src, alt = 'background', SetIsLoad }) => {
   const classes = useStyles();
   const theme = useTheme();
+
+  const Load = () => {
+    // setTimeout(() => {
+    //   SetIsLoad(false)
+    //   console.log("false")
+    // }, 5000)
+    SetIsLoad(false)
+    // console.log("SetIsLoad(false)")
+  }
 
   return (
     <div className={classes.background}>
@@ -26,6 +35,7 @@ const Background = ({ src, alt = 'background' }) => {
         layout="fill"
         objectFit="cover"
         quality={100}
+        onLoad={() => Load()}
       />
     </div>
   )

@@ -4,6 +4,7 @@ import { Grid, Typography } from '@material-ui/core'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import Navigation from '../../components/Menu/Navigation'
 import Background from '../../components/HelpComponents/Background'
+import Loading from './../../components/HelpComponents/Loading';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -72,7 +73,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function Boost () {
+export default function Boost() {
     const classes = useStyles();
     const theme = useTheme();
 
@@ -80,6 +81,8 @@ export default function Boost () {
         let count = Math.floor(Math.random() * (Math.floor(5) - Math.ceil(1))) + Math.ceil(1)
         return "/wallpapers/hp" + count.toString() + ".jpg"
     }
+
+    const [isLoad, SetIsLoad] = React.useState(true)
 
     return (
         <>
@@ -89,7 +92,8 @@ export default function Boost () {
                 </title>
             </Head>
             <div className={classes.root}>
-                <Background src={wallpapers()} />
+                <Background SetIsLoad={SetIsLoad} src={wallpapers()} />
+                {isLoad && <Loading />}
                 <Grid
                     className={classes.gridroot}
                     container
