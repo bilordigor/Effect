@@ -112,9 +112,9 @@ export default function Home() {
         </title>
       </Head>
       <div className={classes.root}>
-        <Background SetIsLoad={SetIsLoad} src={wallpapers()} />
-        {isLoad && <Loading />}
-        <Grid
+        {isLoad && <Background SetIsLoad={SetIsLoad} src={wallpapers()} />}
+        {!isLoad && <Loading />}
+        {isLoad && <Grid
           className={classes.gridroot}
           container
           direction="column"
@@ -135,7 +135,7 @@ export default function Home() {
           <Grid item container direction="column" alignItems="center" className={classes.gridAlert}>
             {/* {props.store.alertData.text != '' && <Alert severity={alertList[props.store.alertData.type]}>{props.store.alertData.text}</Alert>} */}
           </Grid>
-        </Grid>
+        </Grid>}
       </div>
     </>
   )
