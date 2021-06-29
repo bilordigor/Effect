@@ -78,11 +78,6 @@ export default function FutureOfEducation() {
     const classes = useStyles();
     const theme = useTheme();
 
-    const wallpapers = () => {
-        let count = Math.floor(Math.random() * (Math.floor(5) - Math.ceil(1))) + Math.ceil(1)
-        return "/wallpapers/hp" + count.toString() + ".jpg"
-    }
-
     const [isLoad, SetIsLoad] = React.useState(true)
 
     return (
@@ -93,7 +88,7 @@ export default function FutureOfEducation() {
                 </title>
             </Head>
             <div className={classes.root}>
-                <Background SetIsLoad={SetIsLoad} src={wallpapers()} />
+            <Background SetIsLoad={SetIsLoad} src="/wallpapers/hp4.jpg" />
                 {isLoad && <Loading />}
                 <Grid
                     className={classes.gridroot}
