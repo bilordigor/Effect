@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Download() {
     const classes = useStyles();
     const theme = useTheme();
-    
+
     const [isLoad, SetIsLoad] = React.useState(true)
 
     return (
@@ -86,7 +86,7 @@ export default function Download() {
                 </title>
             </Head>
             <div className={classes.root}>
-                <Background SetIsLoad={SetIsLoad} src="/wallpapers/hp1.jpg" />
+                <Background SetIsLoad={SetIsLoad} src="/wallpapers/hp3.jpg" />
                 {isLoad && <Loading />}
                 <Grid
                     className={classes.gridroot}
