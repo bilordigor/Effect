@@ -121,7 +121,7 @@ export default function Home() {
             <Typography className={classes.labelMain}>
               Новое слово в образовании
             </Typography>
-            <Typography className={classes.labelSecondary}>
+            <Typography align="center" className={classes.labelSecondary}>
               Ξ Effect - платформа, где можно делиться знаниями и получать их так, как вам будет удобнее.
             </Typography>
           </Grid>
