@@ -147,7 +147,7 @@ export default function Navigation() {
         {
             key: '0',
             label: 'Регистрация',
-            way: 'https://appxieffect.vercel.app/registration',
+            way: 'https://appxieffect.heroku.com/registration',
         },
         {
             key: '1',
@@ -196,13 +196,13 @@ export default function Navigation() {
             </Hidden>
             <Hidden mdUp>
                 <Grid className={classes.gridRegLink}>
-                    <Link href="https://appxieffect.vercel.app/registration">
-                        <LinkUI href="https://appxieffect.vercel.app/registration" className={classes.menuLink}>Регистрация</LinkUI>
+                    <Link href="https://appxieffect.heroku.com/registration">
+                        <LinkUI href="https://appxieffect.heroku.com/registration" className={classes.menuLink}>Регистрация</LinkUI>
                     </Link>
                 </Grid>
             </Hidden>
             <Grid className={classes.gridEnterButton}>
-                <Link href="https://appxieffect.vercel.app/login">
+                <Link href="https://appxieffect.heroku.com/login">
                     <Button variant="contained" className={classes.enterButton} > Вход </Button>
                 </Link>
             </Grid>
